@@ -1,4 +1,4 @@
-# Astro SSR with Islands doing react-router-dom Client Side routing
+# Astro SSR plus Client Side Rendering on Islands
 
 * `/` -> Server-Side rendering index.astro
 * `/static` -> Client-Side rendering controlled by react-router-dom ( unlimited dynamic routes )
