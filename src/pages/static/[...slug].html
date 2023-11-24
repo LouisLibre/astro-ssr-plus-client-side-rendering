@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Static Client-Side Rendering</title>
+        <!-- React and ReactDOM from CDN -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <!-- Babel for JSX processing -->
+        <script src="https://unpkg.com/react-router-dom@5.2.0/umd/react-router-dom.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone@7.23.4/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            // Import React Router components at the top of your script
+            const { BrowserRouter, Route, Link } = ReactRouterDOM;
+
+            function App() {
+                return (
+                    <BrowserRouter>
+                        <div>
+                            <nav>
+                                <Link to="/static/">Home</Link>
+                                <Link to="/static/about">About</Link>
+                            </nav>
+                            <Route path="/static" exact component={Home} />
+                            <Route path="/static/about" component={About} />
+                        </div>
+                    </BrowserRouter>
+                );
+            }
+
+            function Home() {
+                return <h2>Home</h2>;
+            }
+
+            function About() {
+                return <h2>About</h2>;
+            }
+
+            ReactDOM.render(<App />, document.getElementById("root"));
+        </script>
+    </body>
+</html>
